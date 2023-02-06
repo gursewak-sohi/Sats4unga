@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sats4unga</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body x-data="data()" class="text-base tracking-tight antialiased">
+    <!-- Header Section -->
+    <header class="border-b border-dark-300">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="relative flex py-1.5 xl:grid xl:grid-cols-3">
+                <div class="flex">
+                    <a href="index.html"><img class="h-14 md:h-auto" src="assets/images/svg/logo.svg" alt="logo" /></a>
+                </div>
+                <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute top-full -left-4 -right-4 z-40 flex max-h-0 flex-col overflow-hidden bg-dark-800 transition-all duration-300 md:static md:ml-auto md:max-h-full md:items-center md:justify-center md:overflow-visible md:bg-white xl:ml-0">
+                    <ul class="flex flex-col gap-4 p-4 text-base leading-5 tracking-normal text-white md:flex-row md:items-center md:gap-8 md:p-0 md:text-center md:text-dark-700">
+                        <li>
+                            <a class="block p-2.5" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5 font-medium text-white md:text-secondary-600" href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="contact.html">Contact</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="faq.html">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
+                  <img
+                    x-show="!isMenuOpen"
+                    src="assets/images/svg/menu.svg"
+                    alt="icon"
+                  />
+                  <img
+                    x-show="isMenuOpen"
+                    src="assets/images/svg/close.svg"
+                    alt="icon"
+                  />
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Heading Section -->
+    <section class="bg-primary-100 py-16 lg:py-24">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-40">
+            <div class="flex max-w-3xl flex-col gap-3">
+                <p class="text-sm font-medium text-secondary-600 lg:text-base">
+                    Nice to meet you
+                </p>
+                <h1 class="text-4xl font-medium leading-tight lg:text-5xl lg:leading-tight">
+                    Our mission is to help Kenyans who are suffering due to drought.
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-16 lg:py-24">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-40">
+            <div class="flex flex-col">
+                <p class="mb-3 text-sm font-medium text-secondary-600 lg:text-base">
+                    Our story
+                </p>
+                <h2 class="mb-4 text-3xl font-medium leading-tight lg:mb-5 lg:text-4xl lg:leading-tight">
+                    We’re just getting started
+                </h2>
+                <p class="text-lg text-dark-500 lg:text-xl">
+                    Lorem ipsum dolor sit amet consectetur. Magna turpis interdum massa ut vivamus.
+                </p>
+            </div>
+            <div class="mt-12 grid grid-cols-1 gap-8 border-t border-gray-200 pt-6 text-base text-dark-500 lg:mt-16 lg:grid-cols-2 lg:gap-16 lg:border-none lg:pt-0 lg:text-lg">
+                <p>
+                    Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet nulla purus habitasse. <br/>
+                    <br /> Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo
+                    cursus.
+                </p>
+                <div class="flex flex-col gap-6">
+                    <ul class="list-disc pl-7">
+                        <li>Mi tincidunt elit, id quisque ligula ac diam, amet.</li>
+                        <li>
+                            Vel etiam suspendisse morbi eleifend faucibus eget vestibulum.
+                        </li>
+                        <li>
+                            Tellus aliquam enim urna, etiam. Mauris posuere vulputate.
+                        </li>
+                    </ul>
+                    <p>
+                        Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section class="py-16 lg:py-24">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-40">
+            <div class="flex flex-col gap-12 lg:flex-row lg:gap-24">
+                <div class="flex flex-col">
+                    <p class="mb-3 text-sm font-medium text-secondary-600 lg:text-base">
+                        Our team
+                    </p>
+                    <h2 class="mb-4 text-3xl font-medium leading-tight lg:mb-5 lg:text-4xl lg:leading-tight">
+                        Leadership team
+                    </h2>
+                    <p class="text-lg text-dark-500 lg:text-xl">
+                        We’re a cross-disciplinary team that loves to create great experiences for our customers.
+                    </p>
+                </div>
+                <ul class="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3">
+                    <template x-for="member in team" :key="member.id">
+                      <li class="flex flex-row items-start gap-4 md:flex-col md:gap-5">
+                        <img
+                          class="h-20 w-20 rounded-full object-cover"
+                          :src="member.avatar"
+                          alt="avatar"
+                        />
+                        <div class="flex flex-col items-start">
+                          <h4
+                            x-text="member.name"
+                            class="text-lg font-medium text-dark-900"
+                          ></h4>
+                          <h5 x-text="member.role" class="mb-2 text-primary-600"></h5>
+                          <p x-text="member.description" class="mb-4 text-dark-500"></p>
+                          <ul class="flex items-center gap-4">
+                            <li>
+                              <a target="_blank" :href="member.twitter">
+                                <img
+                                  src="assets/images/about/social/twitter.svg"
+                                  alt="twitter"
+                                />
+                              </a>
+                            </li>
+                            <li>
+                              <a target="_blank" :href="member.linkedin">
+                                <img
+                                  src="assets/images/about/social/linkedin.svg"
+                                  alt="linkedin"
+                                />
+                              </a>
+                            </li>
+                            <li>
+                              <a target="_blank" :href="member.dribbble">
+                                <img
+                                  src="assets/images/about/social/dribbble.svg"
+                                  alt="dribbble"
+                                />
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                  </template>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark-1000 py-12">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="xl:px-8">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col justify-between md:items-center lg:flex-row">
+                        <div class="mb-8 flex lg:mb-0 2xl:w-40">
+                            <a href="index.html"><img src="assets/images/svg/logo-light.svg" alt="logo" /></a>
+                        </div>
+                        <ul class="mb-9 flex flex-col gap-2.5 text-base leading-5 text-dark-200 md:flex-row md:items-center lg:mb-0">
+                            <li>
+                                <a class="block p-2.5" href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="contact.html">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="gallery.html">Gallery</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                        </ul>
+                        <ul class="flex items-center gap-6 pl-3 md:pl-0">
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/linkedin.svg" alt="linkedin" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/twitter.svg" alt="twitter" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/instagram.svg" alt="instagram" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/facebook.svg" alt="facebook" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-center text-dark-400">
+                        © 2023 Sats4unga, All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Alipine JS -->
+<script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</html>
