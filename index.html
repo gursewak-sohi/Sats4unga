@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <title>Sats4unga</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <!-- Alipine JS -->
+    <script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="data()" class="text-base tracking-tight antialiased">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="relative flex py-1.5 xl:grid xl:grid-cols-3">
+                <div class="flex">
+                    <a href="index.html"><img class="h-14 md:h-auto" src="assets/images/svg/logo.svg" alt="logo" /></a>
+                </div>
+                <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute top-full -left-4 -right-4 z-40 flex max-h-0 flex-col overflow-hidden bg-dark-800 transition-all duration-300 md:static md:ml-auto md:max-h-full md:items-center md:justify-center md:overflow-visible md:bg-white xl:ml-0">
+                    <ul class="flex flex-col gap-4 p-4 text-base leading-5 tracking-normal text-white md:flex-row md:items-center md:gap-8 md:p-0 md:text-center md:text-dark-700">
+                        <li>
+                            <a class="block p-2.5 font-medium text-white md:text-secondary-600" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="contact.html">Contact</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="faq.html">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
+                    <img
+                    x-show="!isMenuOpen"
+                    src="assets/images/svg/menu.svg"
+                    alt="icon"/>
+                    <img
+                    x-show="isMenuOpen"
+                    src="assets/images/svg/close.svg"
+                    alt="icon"/>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Banner Section -->
+    <section class="relative z-0 bg-cover bg-center" style="background-image: url(assets/images/homepage/banner@2x.png)">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="flex h-[652px] flex-col items-center justify-between md:flex-row lg:h-[720px]">
+                <div class="flex w-full flex-col gap-y-6 pt-16 text-white md:pt-0">
+                    <h1 class="text-4xl font-medium capitalize leading-tight lg:text-h1">
+                        Unga for Kenyans <br /> suffering due to drought.
+                    </h1>
+                    <p class="text-lg leading-7 lg:text-xl lg:leading-8">
+                        Donate sats(bitcoin) to buy unga (maize flour) to people in Kenya
+                    </p>
+                    <div class="mt-2 flex flex-col gap-4 md:mt-0 md:flex-row md:items-center">
+                        <a href="javascript:;" class="btn btn-primary">Donate now</a>
+                        <a href="javascript:;" class="btn btn-dark">Receive donation</a>
+                    </div>
+                </div>
+                <div class="mb-16 flex-shrink-0 self-end md:mb-9 md:mr-3">
+                    <img src="assets/images/homepage/badge.svg" alt="badge" />
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-y-0 left-0 -z-10 w-2/3 bg-gradient-to-r from-dark-800/80"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 lg:py-24">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="xl:px-8">
+                <div class="grid grid-cols-1 gap-8 rounded-2xl bg-secondary-50 px-4 py-10 md:grid-cols-3 md:gap-4 lg:py-16 xl:gap-8 xl:p-16">
+                    <div class="flex flex-col items-center gap-2 text-center">
+                        <h3 class="text-5xl font-medium leading-tight text-primary-600 lg:text-6xl">
+                            +$10K
+                        </h3>
+                        <p class="text-lg text-primary-800">Worth of BTC distributed</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 text-center">
+                        <h3 class="text-5xl font-medium leading-tight text-primary-600 lg:text-6xl">
+                            +20K
+                        </h3>
+                        <p class="text-lg text-primary-800">Bags of maize meal donated</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 text-center">
+                        <h3 class="text-5xl font-medium leading-tight text-primary-600 lg:text-6xl">
+                            14,859
+                        </h3>
+                        <p class="text-lg text-primary-800">People have a better life</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="pt-14 pb-14 lg:pt-28 lg:pb-11 xl:pt-40">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-9">
+                <div class="flex flex-col items-start">
+                    <h2 class="text-3xl font-medium capitalize leading-tight text-primary-1100 lg:text-5xl lg:leading-tight">
+                        There’s no big impact without Action
+                    </h2>
+                    <p class="mt-4 text-base text-dark-700 md:text-lg">
+                        Lorem ipsum dolor sit amet consectetur. Volutpat dolor quis volutpat volutpat amet sollicitudin. Vitae porttitor vel ut id auctor pellentesque tellus dui malesuada. Ullamcorper fringilla semper non rhoncus. Enim facilisis lorem proin est rutrum nisl.
+                        In tortor at <br />
+                        <br /> consectetur lectus adipiscing ullamcorper turpis augue. Nunc sed enim tortor pellentesque. Consectetur ut lacus neque sagittis vitae eget viverra enim hendrerit. Magna facilisis egestas malesuada sagittis justo elementum
+                        leo ullamcorper neque. Mauris risus augue ante nisl auctor lorem egestas. Justo accumsan tincidunt mauris urna faucibus fusce tincidunt aliquam ut. Suspendisse dui diam diam malesuada nunc.
+                    </p>
+                    <a href="javascript:;" class="btn btn-primary mt-8 w-full md:w-auto">Donate now</a>
+                </div>
+                <div class="flex-shrink-0">
+                    <img class="max-w-full md:max-w-lg xl:max-w-none" src="assets/images/homepage/frames@2x.png" width="647" height="550" alt="frames" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Section -->
+    <section class="py-14 lg:py-24">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="xl:px-8">
+                <ul class="grid grid-cols-2 items-center justify-between gap-8 px-0 py-0 lg:grid-cols-3 lg:py-16 xl:flex xl:p-16">
+                    <li>
+                        <img src="assets/images/homepage/clients/layers.svg" alt="layers" />
+                    </li>
+                    <li>
+                        <img src="assets/images/homepage/clients/sisyphus.svg" alt="sisyphus" />
+                    </li>
+                    <li>
+                        <img src="assets/images/homepage/clients/circooles.svg" alt="circooles" />
+                    </li>
+                    <li>
+                        <img src="assets/images/homepage/clients/catalog.svg" alt="catalog" />
+                    </li>
+                    <li>
+                        <img src="assets/images/homepage/clients/quotient.svg" alt="quotient" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-dark-100 pt-14 pb-14 lg:pt-24 lg:pb-32">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="mx-auto max-w-3xl">
+                <div class="mb-7 flex flex-col gap-5 text-center md:mb-16">
+                    <h2 class="text-3xl font-medium leading-tight lg:text-4xl">
+                        Frequently asked questions
+                    </h2>
+                    <p class="text-lg text-dark-500 lg:text-xl">
+                        Everything you need to know about the donation
+                    </p>
+                </div>
+
+                <div class="-mx-4 flex flex-col gap-4 tracking-normal md:mx-0">
+                    <template x-for="item in faq" :key="item.id">
+                        <div
+                            @click="selected !== item.id ? selected = item.id : selected = null"
+                            class="relative flex cursor-pointer flex-col rounded-none bg-white py-5 pr-5 pl-14 md:rounded-2xl md:py-8 md:pr-8 md:pl-20">
+                            <div class="relative">
+                            <h4
+                                x-text="item.question"
+                                class="text-lg font-medium text-primary-1100"
+                            ></h4>
+                            <div class="absolute -left-9 top-0 md:-left-12">
+                                <img
+                                x-show="selected !== item.id"
+                                src="assets/images/svg/minus.svg"
+                                alt="minus"
+                                />
+                                <img
+                                x-show="selected == item.id"
+                                src="assets/images/svg/plus.svg"
+                                alt="minus"
+                                />
+                            </div>
+                            </div>
+                            <div
+                            :style="selected == item.id ? 'max-height: ' + $refs.accordion.scrollHeight + 'px' : ''"
+                            x-ref="accordion"
+                            class="relative max-h-0 overflow-hidden transition-all duration-300">
+                            <p x-text="item.answer" class="pt-2 text-base text-dark-500">
+                                Lorem ipsum dolor sit amet consectetur. Risus curabitur enim
+                                consectetur adipiscing varius quis. Tellus hac ipsum
+                                accumsan ut faucibus facilisi nulla. Elementum est tortor.
+                            </p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark-1000 py-12">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="xl:px-8">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col justify-between md:items-center lg:flex-row">
+                        <div class="mb-8 flex lg:mb-0 2xl:w-40">
+                            <a href="index.html"><img src="assets/images/svg/logo-light.svg" alt="logo" /></a>
+                        </div>
+                        <ul class="mb-9 flex flex-col gap-2.5 text-base leading-5 text-dark-200 md:flex-row md:items-center lg:mb-0">
+                            <li>
+                                <a class="block p-2.5" href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="javascript:;">About us</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="javascript:;">Contact us</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="javascript:;">Gallery</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="javascript:;">Privacy policy</a>
+                            </li>
+                        </ul>
+                        <ul class="flex items-center gap-6 pl-3 md:pl-0">
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/linkedin.svg" alt="linkedin" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/twitter.svg" alt="twitter" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/instagram.svg" alt="instagram" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/facebook.svg" alt="facebook" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-center text-dark-400">
+                        © 2023 Sats4unga, All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("data", () => ({
+            isMenuOpen: false,
+            selected: 1,
+            faq: [{
+                id: 1,
+                question: "What is your future project?",
+                answer: "Lorem ipsum dolor sit amet consectetur. Risus curabitur enim consectetur adipiscing varius quis. Tellus hac ipsum accumsan ut faucibus facilisi nulla. Elementum est tortor.",
+            }, {
+                id: 2,
+                question: "Lorem ipsum",
+                answer: "Lorem ipsum dolor sit amet consectetur. Risus curabitur enim consectetur adipiscing varius quis. Tellus hac ipsum accumsan ut faucibus facilisi nulla. Elementum est tortor.",
+            }, {
+                id: 3,
+                question: "Lorem ipsum dolor sit amet consectetur.",
+                answer: "Lorem ipsum dolor sit amet consectetur. Risus curabitur enim consectetur adipiscing varius quis. Tellus hac ipsum accumsan ut faucibus facilisi nulla. Elementum est tortor.",
+            }, {
+                id: 4,
+                question: "Lorem ipsum dolor sit amet consectetur.",
+                answer: "Lorem ipsum dolor sit amet consectetur. Risus curabitur enim consectetur adipiscing varius quis. Tellus hac ipsum accumsan ut faucibus facilisi nulla. Elementum est tortor.",
+            }, {
+                id: 5,
+                question: "In iaculis libero sapien ut ante proin.",
+                answer: "Lorem ipsum dolor sit amet consectetur. Risus curabitur enim consectetur adipiscing varius quis. Tellus hac ipsum accumsan ut faucibus facilisi nulla. Elementum est tortor.",
+            }, {
+                id: 6,
+                question: " Vitae eu ornare tellus ante tortor.",
+                answer: "Lorem ipsum dolor sit amet consectetur. Risus curabitur enim consectetur adipiscing varius quis. Tellus hac ipsum accumsan ut faucibus facilisi nulla. Elementum est tortor.",
+            }, ],
+        }));
+    });
+</script>
+
+</html>
