@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sats4unga</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body x-data="data()" class="flex min-h-screen flex-col text-base antialiased">
+    <!-- Header Section -->
+    <header class="block border-b border-dark-300/60 lg:hidden">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="relative flex py-1.5 xl:grid xl:grid-cols-3">
+                <div class="flex">
+                    <a href="index.html"><img class="h-14 md:h-auto" src="assets/images/svg/logo.svg" alt="logo" /></a>
+                </div>
+                <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute top-full -left-4 -right-4 z-40 flex max-h-0 flex-col overflow-hidden bg-dark-800 transition-all duration-300 md:static md:ml-auto md:max-h-full md:items-center md:justify-center md:overflow-visible md:bg-white xl:ml-0">
+                    <ul class="flex flex-col gap-4 p-4 text-base leading-5 tracking-normal text-white md:flex-row md:items-center md:gap-8 md:p-0 md:text-center md:text-dark-700">
+                        <li>
+                            <a class="block p-2.5 font-medium text-white md:text-secondary-600" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="contact.html">Contact</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="faq.html">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
+                    <img
+                    x-show="!isMenuOpen"
+                    src="assets/images/svg/menu.svg"
+                    alt="icon"
+                    />
+                    <img
+                    x-show="isMenuOpen"
+                    src="assets/images/svg/close.svg"
+                    alt="icon"
+                    />
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Donte Sats Section -->
+    <section class="flex flex-1 flex-col">
+        <div class="grid flex-1 lg:grid-cols-11 2xl:grid-cols-12">
+            <div class="relative col-span-6 hidden flex-col items-center justify-center bg-dark-100 lg:flex">
+                <img class="relative z-10" src="assets/images/svg/logo-lg.svg" alt="logo" />
+                <img class="absolute inset-0 h-full w-full object-cover" src="assets/images/donate/cover.png" alt="cover" />
+                <p class="absolute inset-x-0 bottom-5 z-10 text-center text-sm text-white">
+                    © 2023 Sats4unga, All rights reserved
+                </p>
+            </div>
+            <div class="relative flex flex-col items-center bg-white pt-9 pb-20 md:justify-center md:pt-20 lg:col-span-5 lg:pt-0 lg:pb-10">
+                <div class="mx-auto flex w-full max-w-sm flex-col px-4 lg:px-0">
+                    <div class="mb-6 flex">
+                        <a class="flex items-center gap-2 text-sm text-primary-600" href="index.html"><img src="assets/images/svg/arrow-left.svg" alt="arrow-left" />Back to home</a>
+                    </div>
+                    <h1 class="mb-2 text-3xl font-medium leading-tight text-dark-900 lg:text-4xl lg:leading-tight">
+                        Donate Sats
+                    </h1>
+                    <p class="text-base text-dark-700">
+                        1 Bag of Unga costs $2 and provides 4 adult meals.
+                    </p>
+                    <form action="send-btc.html" class="mt-6 flex flex-col gap-6" novalidate>
+                        <div class="relative z-0">
+                            <input x-model="donateForm.email" type="email" id="email" class="peer block w-full appearance-none border-b border-dark-300/50 bg-transparent py-3.5 text-base leading-5 text-gray-900 focus:border-primary-600 focus:outline-none focus:ring-0" placeholder=""
+                            />
+                            <label for="email" class="absolute top-3.5 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-dark-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75">Email address</label>
+                        </div>
+                        <div class="relative z-0">
+                            <input x-model.number="donateForm.bags" type="text" id="numberOfBags" class="peer block w-full appearance-none border-b border-dark-300/50 bg-transparent py-3.5 text-base leading-5 text-gray-900 focus:border-primary-600 focus:outline-none focus:ring-0"
+                                placeholder="" />
+                            <label for="numberOfBags" class="absolute top-3.5 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-dark-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75">Number of bags</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">
+                            Donate Now
+                            <div class="inline" x-show="donateForm.bags > 0">
+                            $<span x-text="donateForm.bags*2">0.00</span>
+                            </div>
+                        </button>
+
+                        <label class="flex cursor-pointer gap-3">
+                            <div class="relative top-0.5">
+                            <img
+                                class="absolute top-0 left-0 h-5 w-5"
+                                src="assets/images/svg/checkbox.svg"
+                                alt="unchecked"
+                            />
+                            <input
+                                type="checkbox"
+                                class="peer h-5 w-5 accent-primary-600 opacity-0"
+                            />
+                            <img
+                                class="absolute top-0 left-0 h-5 w-5 opacity-0 peer-checked:opacity-100"
+                                src="assets/images/svg/checked.svg"
+                                alt="checked"
+                            />
+                            </div>
+                            <div class="text-xs leading-5 tracking-normal text-dark-500">
+                            By clicking Donate, I agree that I have read and accepted the
+                            <a
+                                class="whitespace-nowrap text-primary-600 hover:underline"
+                                target="_blank"
+                                href="javascript:;"
+                                >Terms of Use</a>
+                            and
+                            <a
+                                class="whitespace-nowrap text-primary-600 hover:underline"
+                                target="_blank"
+                                href="privacy-policy.html"
+                                >Privacy Policy</a>.
+                            </div>
+                        </label>
+                    </form>
+                    <div class="mt-12 border-t border-dark-300/50 pt-6 text-xs leading-5 tracking-normal text-dark-500">
+                        Protected by reCAPTCHA and subject to the Google
+                        <a class="whitespace-nowrap text-primary-600 hover:underline" target="_blank" href="privacy-policy.html">Privacy Policy</a> and
+                        <a class="whitespace-nowrap text-primary-600 hover:underline" target="_blank" href="javascript:;">Terms of Service</a>.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-8 mt-auto block text-center text-sm text-dark-500 lg:hidden">
+                © 2023 Sats4unga, All rights reserved
+            </div>
+        </div>
+    </section>
+</body>
+<!-- Alipine JS -->
+<script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</html>

@@ -82,5 +82,9 @@ document.addEventListener("alpine:init", () => {
             linkedin: "javascript:;",
             dribbble: "javascript:;"
         }],
+        donateForm: {
+            email: "",
+            bags: "",
+        },
     }));
 });
