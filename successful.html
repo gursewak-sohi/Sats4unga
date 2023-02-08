@@ -62,72 +62,23 @@
                     © 2023 Sats4unga, All rights reserved
                 </p>
             </div>
-            <div class="relative flex flex-col items-center bg-white pt-9 pb-20 md:justify-center md:py-20 lg:col-span-5 lg:pt-40 lg:pb-52">
-                <div class="mx-auto flex w-full max-w-sm flex-col px-4 lg:px-0">
-                    <div class="mb-6 flex">
+            <div class="relative flex flex-col items-center bg-white pt-9 pb-28 md:justify-center md:pt-20 md:pb-40 lg:col-span-5 lg:pt-40 lg:pb-60">
+                <div class="mx-auto flex w-full max-w-lg flex-col items-center text-center px-4 lg:px-10 xl:px-8">
+                    <div class="mb-6 flex self-start">
                         <a class="flex items-center gap-2 text-sm text-primary-600" href="index.html"><img src="assets/images/svg/arrow-left.svg" alt="arrow-left" />Back to home</a>
                     </div>
-                    <h1 class="mb-2 text-3xl font-medium leading-tight text-dark-900 lg:text-4xl lg:leading-tight">
-                        Donate Sats
+                    <img class="mb-6" src="assets/images/donate/thank-you.png" width="306" height="306" alt="thank-you" />
+                    <h1 class="mb-2 text-2xl font-medium leading-tight text-dark-900">
+                        Your donation was received
                     </h1>
-                    <p class="text-base text-dark-700">
-                        1 Bag of Unga costs $2 and provides 4 adult meals.
+                    <p class="text-base text-dark-500 mb-6">
+                        Thank you for donating
+                        <span class="text-primary-600">29537</span> sats to the general donation pool. Your donation will be assigned to a specific individual later.
                     </p>
-                    <form action="send-btc.html" class="mt-6 flex flex-col gap-6" novalidate>
-                        <div class="relative z-0">
-                            <input x-model="donateForm.email" type="email" id="email" class="peer block w-full appearance-none border-b border-dark-300/50 bg-transparent py-3.5 text-base leading-5 text-gray-900 focus:border-primary-600 focus:outline-none focus:ring-0" placeholder=""
-                            />
-                            <label for="email" class="absolute top-3.5 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-dark-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75">Email address</label>
-                        </div>
-                        <div class="relative z-0">
-                            <input x-model.number="donateForm.bags" type="text" id="numberOfBags" class="peer block w-full appearance-none border-b border-dark-300/50 bg-transparent py-3.5 text-base leading-5 text-gray-900 focus:border-primary-600 focus:outline-none focus:ring-0"
-                                placeholder="" />
-                            <label for="numberOfBags" class="absolute top-3.5 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-dark-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75">Number of bags</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-sm w-full">
-                            Donate Now
-                            <div class="inline" x-show="donateForm.bags > 0">
-                            $<span x-text="donateForm.bags*2">0.00</span>
-                            </div>
-                        </button>
-
-                        <label class="flex cursor-pointer gap-3">
-                            <div class="relative top-0.5">
-                            <img
-                                class="absolute top-0 left-0 h-5 w-5"
-                                src="assets/images/svg/checkbox.svg"
-                                alt="unchecked"
-                            />
-                            <input
-                                type="checkbox"
-                                class="peer h-5 w-5 accent-primary-600 opacity-0"
-                            />
-                            <img
-                                class="absolute top-0 left-0 h-5 w-5 opacity-0 peer-checked:opacity-100"
-                                src="assets/images/svg/checked.svg"
-                                alt="checked"
-                            />
-                            </div>
-                            <div class="text-xs leading-5 tracking-normal text-dark-500">
-                            By clicking Donate, I agree that I have read and accepted the
-                            <a
-                                class="whitespace-nowrap text-primary-600 hover:underline"
-                                target="_blank"
-                                href="javascript:;"
-                                >Terms of Use</a>
-                            and
-                            <a
-                                class="whitespace-nowrap text-primary-600 hover:underline"
-                                target="_blank"
-                                href="privacy-policy.html"
-                                >Privacy Policy</a>.
-                            </div>
-                        </label>
-                    </form>
-                    <div class="mt-12 border-t border-dark-300/50 pt-6 text-xs leading-5 tracking-normal text-dark-500">
-                        Protected by reCAPTCHA and subject to the Google
-                        <a class="whitespace-nowrap text-primary-600 hover:underline" target="_blank" href="privacy-policy.html">Privacy Policy</a> and
-                        <a class="whitespace-nowrap text-primary-600 hover:underline" target="_blank" href="javascript:;">Terms of Service</a>.
+                    <div class="w-full md:px-8">
+                        <a href="donate-sats.html" class="text-sm block w-full rounded-full border border-dark-300/60 px-6 py-4 text-center leading-none text-dark-600 transition-colors duration-300 hover:text-dark-800 active:scale-95">
+                            Make another donation
+                        </a>
                     </div>
                 </div>
             </div>
