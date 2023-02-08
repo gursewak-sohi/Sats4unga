@@ -1,6 +1,11 @@
 document.addEventListener("alpine:init", () => {
     Alpine.data("data", () => ({
         isMenuOpen: false,
+        showReceiveDonation: false,
+        donateForm: {
+            email: "",
+            bags: "",
+        },
         selectedFaq: 1,
         faq: [{
             id: 1,
@@ -82,9 +87,5 @@ document.addEventListener("alpine:init", () => {
             linkedin: "javascript:;",
             dribbble: "javascript:;"
         }],
-        donateForm: {
-            email: "",
-            bags: "",
-        },
     }));
 });
