@@ -874,20 +874,12 @@ video {
   top: -0px;
 }
 
-.right-0 {
-  right: 0px;
-}
-
-.top-2 {
-  top: 0.5rem;
+.-right-3 {
+  right: -0.75rem;
 }
 
 .top-1 {
   top: 0.25rem;
-}
-
-.-right-3 {
-  right: -0.75rem;
 }
 
 .isolate {
@@ -2407,12 +2399,12 @@ video {
   padding: 0.5rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-4 {
@@ -2624,14 +2616,14 @@ video {
   line-height: 1;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-medium {
@@ -2726,12 +2718,12 @@ video {
   line-height: 2rem;
 }
 
-.leading-none {
-  line-height: 1;
-}
-
 .leading-4 {
   line-height: 1rem;
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .tracking-tight {
@@ -2802,6 +2794,11 @@ video {
   color: rgb(83 83 83 / var(--tw-text-opacity));
 }
 
+.text-danger-600 {
+  --tw-text-opacity: 1;
+  color: rgb(234 0 0 / var(--tw-text-opacity));
+}
+
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
 }
@@ -2809,11 +2806,6 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
-.text-danger-600 {
-  --tw-text-opacity: 1;
-  color: rgb(234 0 0 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3467,6 +3459,11 @@ video {
     padding-bottom: 2rem;
   }
 
+  .md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
   .md\:pl-0 {
     padding-left: 0px;
   }
@@ -3620,6 +3617,11 @@ video {
     padding-bottom: 12rem;
   }
 
+  .lg\:py-40 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
   .lg\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -3635,12 +3637,13 @@ video {
     padding-right: 2.5rem;
   }
 
-  .lg\:pt-0 {
-    padding-top: 0px;
+  .lg\:py-44 {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
   }
 
-  .lg\:pb-10 {
-    padding-bottom: 2.5rem;
+  .lg\:pt-0 {
+    padding-top: 0px;
   }
 
   .lg\:pt-24 {
@@ -3669,6 +3672,18 @@ video {
 
   .lg\:pb-14 {
     padding-bottom: 3.5rem;
+  }
+
+  .lg\:pt-40 {
+    padding-top: 10rem;
+  }
+
+  .lg\:pb-48 {
+    padding-bottom: 12rem;
+  }
+
+  .lg\:pb-52 {
+    padding-bottom: 13rem;
   }
 
   .lg\:text-base {
@@ -3705,21 +3720,12 @@ video {
     line-height: 1;
   }
 
-  .lg\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
   .lg\:leading-tight {
     line-height: 1.25;
   }
 
   .lg\:leading-8 {
     line-height: 2rem;
-  }
-
-  .lg\:leading-loose {
-    line-height: 2;
   }
 }
 
