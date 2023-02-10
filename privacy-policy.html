@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sats4unga</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body x-data="data()" class="flex min-h-screen flex-col text-base tracking-tight antialiased">
+    <!-- Header Section -->
+    <header class="border-b border-dark-300/60">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="relative flex py-1.5 xl:grid xl:grid-cols-3">
+                <div class="flex">
+                    <a href="index.html"><img class="h-14 md:h-auto" src="assets/images/svg/logo.svg" alt="logo" /></a>
+                </div>
+                <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute top-full -left-4 -right-4 z-40 flex max-h-0 flex-col overflow-hidden bg-dark-800 transition-all duration-300 md:static md:ml-auto md:max-h-full md:items-center md:justify-center md:overflow-visible md:bg-white xl:ml-0">
+                    <ul class="flex flex-col gap-4 p-4 text-base leading-5 tracking-normal text-white md:flex-row md:items-center md:gap-8 md:p-0 md:text-center md:text-dark-700">
+                        <li>
+                            <a class="block p-2.5" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="contact.html">Contact</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="index.html#faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
+                  <img
+                    x-show="!isMenuOpen"
+                    src="assets/images/svg/menu.svg"
+                    alt="icon"
+                  />
+                  <img
+                    x-show="isMenuOpen"
+                    src="assets/images/svg/close.svg"
+                    alt="icon"
+                  />
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Heading Section -->
+    <section class="bg-primary-100 py-16 lg:py-24">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-40">
+            <div class="flex max-w-3xl flex-col items-start">
+                <p class="text-sm font-medium text-secondary-600 lg:text-base mb-3">
+                    Privacy Policy
+                </p>
+                <h1 class="text-4xl font-medium leading-tight lg:text-5xl lg:leading-tight mb-6">
+                    We care about your privacy
+                </h1>
+                <p class="text-dark-600 text-lg lg:text-xl mb-8 lg:mb-10">Your privacy is important to us at Untitled. We respect your privacy regarding any information we may collect from you across our website.</p>
+                <ul class="bg-gray-100 p-1.5 rounded-lg text-base font-medium text-dark-600 flex items-center gap-2">
+                    <li>
+                        <button @click="selectedPolicy = 'privacy'" :class="{'shadow-sm bg-white text-primary-600': selectedPolicy == 'privacy' }" class="px-3.5 py-2.5 rounded-md duration-300">Human-friendly</button>
+                    </li>
+                    <li>
+                        <button @click="selectedPolicy = 'legal'" :class="{'shadow-sm bg-white text-primary-600': selectedPolicy == 'legal' }" class="px-3.5 py-2.5 rounded-md duration-300">Legal nonsense</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Privacy Policy -->
+    <section x-show="selectedPolicy == 'privacy'" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        class="py-16 lg:pt-24 lg:pb-40">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-40">
+            <div class="flex flex-col max-w-3xl mx-auto md:px-8">
+                <p class="text-lg text-gray-500 mb-12">Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus
+                    tincidunt. At feugiat sapien varius id. <br><br> Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant diam at. Suscipit
+                    tristique risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est ac volutpat. </p>
+                <h3 class="text-gray-900 mb-5 md:mb-6 text-3xl font-medium">What information do we collect?</h3>
+                <p class="text-lg text-gray-500 mb-12">
+                    Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla. <br><br> Elit nisi in
+                    eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus
+                    sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.<br><br> Ipsum sit mattis nulla
+                    quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis
+                    elit erat nam nibh orci.
+                </p>
+                <h3 class="text-gray-900 mb-5 md:mb-6 text-3xl font-medium">How do we use your information?</h3>
+                <p class="text-lg text-gray-500 mb-12">
+                    Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla. <br><br> Elit nisi in
+                    eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus
+                    sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.<br><br> Ipsum sit mattis nulla
+                    quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis
+                    elit erat nam nibh orci.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">Do we use cookies and other tracking technologies?</h4>
+                <p class="text-lg text-gray-500 mb-12">
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">How long do we keep your information?</h4>
+                <p class="text-lg text-gray-500 mb-12">
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">How do we keep your information safe?</h4>
+                <p class="text-lg text-gray-500 mb-12">
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">What are your privacy rights?</h4>
+                <p class="text-lg text-gray-500 mb-12">
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">How can you contact us about this policy?</h4>
+                <p class="text-lg text-gray-500 mb-4">
+                    Sagittis et eu at elementum, quis in. Proin praesent volutpat egestas sociis sit lorem nunc nunc sit. Eget diam curabitur mi ac. Auctor rutrum lacus malesuada massa ornare et. Vulputate consectetur ac ultrices at diam dui eget fringilla tincidunt. Arcu
+                    sit dignissim massa erat cursus vulputate gravida id. Sed quis auctor vulputate hac elementum gravida cursus dis.
+                </p>
+                <ul class="text-lg text-gray-500 list-decimal pl-5">
+                    <li>Lectus id duis vitae porttitor enim gravida morbi.</li>
+                    <li>Eu turpis posuere semper feugiat volutpat elit, ultrices suspendisse. Auctor vel in vitae placerat.</li>
+                    <li>Suspendisse maecenas ac donec scelerisque diam sed est duis purus.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal -->
+    <section x-show="selectedPolicy == 'legal'" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        class="py-16 lg:pt-24 lg:pb-40">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-40">
+            <div class="flex flex-col max-w-3xl mx-auto md:px-8">
+                <p class="text-lg text-gray-500 mb-12">Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus
+                    tincidunt. At feugiat sapien varius id. <br><br> Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant diam at. Suscipit
+                    tristique risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est ac volutpat. </p>
+                <h3 class="text-gray-900 mb-5 md:mb-6 text-3xl font-medium">What information do we collect?</h3>
+                <p class="text-lg text-gray-500 mb-12">
+                    Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla. <br><br> Elit nisi in
+                    eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus
+                    sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.<br><br> Ipsum sit mattis nulla
+                    quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis
+                    elit erat nam nibh orci.
+                </p>
+                <h3 class="text-gray-900 mb-5 md:mb-6 text-3xl font-medium">How do we use your information?</h3>
+                <p class="text-lg text-gray-500 mb-12">
+                    Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla. <br><br> Elit nisi in
+                    eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus
+                    sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.<br><br> Ipsum sit mattis nulla
+                    quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis
+                    elit erat nam nibh orci.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">Do we use cookies and other tracking technologies?</h4>
+                <p class="text-lg text-gray-500 mb-12">
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">How long do we keep your information?</h4>
+                <p class="text-lg text-gray-500 mb-12">
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">How do we keep your information safe?</h4>
+                <p class="text-lg text-gray-500 mb-12">
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">What are your privacy rights?</h4>
+                <p class="text-lg text-gray-500 mb-12">
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <h4 class="text-gray-900 mb-3 md:mb-4 text-2xl font-medium">How can you contact us about this policy?</h4>
+                <p class="text-lg text-gray-500 mb-4">
+                    Sagittis et eu at elementum, quis in. Proin praesent volutpat egestas sociis sit lorem nunc nunc sit. Eget diam curabitur mi ac. Auctor rutrum lacus malesuada massa ornare et. Vulputate consectetur ac ultrices at diam dui eget fringilla tincidunt. Arcu
+                    sit dignissim massa erat cursus vulputate gravida id. Sed quis auctor vulputate hac elementum gravida cursus dis.
+                </p>
+                <ul class="text-lg text-gray-500 list-decimal pl-5">
+                    <li>Lectus id duis vitae porttitor enim gravida morbi.</li>
+                    <li>Eu turpis posuere semper feugiat volutpat elit, ultrices suspendisse. Auctor vel in vitae placerat.</li>
+                    <li>Suspendisse maecenas ac donec scelerisque diam sed est duis purus.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark-1000 py-12">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="xl:px-8">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col justify-between md:items-center lg:flex-row">
+                        <div class="mb-8 flex lg:mb-0 2xl:w-40">
+                            <a href="index.html"><img src="assets/images/svg/logo-light.svg" alt="logo" /></a>
+                        </div>
+                        <ul class="mb-9 flex flex-col gap-2.5 text-base leading-5 text-dark-200 md:flex-row md:items-center lg:mb-0">
+                            <li>
+                                <a class="block p-2.5" href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="contact.html">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="gallery.html">Gallery</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                        </ul>
+                        <ul class="flex items-center gap-6 pl-3 md:pl-0">
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/linkedin.svg" alt="linkedin" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/twitter.svg" alt="twitter" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/instagram.svg" alt="instagram" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/facebook.svg" alt="facebook" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-center text-dark-400">
+                        © 2023 Sats4unga, All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Alipine JS -->
+<script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</html>

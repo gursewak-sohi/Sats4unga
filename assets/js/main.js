@@ -7,6 +7,7 @@ document.addEventListener("alpine:init", () => {
             bags: "",
         },
         selectedFaq: 1,
+        selectedPolicy: 'privacy',
         faq: [{
             id: 1,
             question: "What is your future project?",
