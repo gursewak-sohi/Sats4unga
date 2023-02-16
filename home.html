@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sats4unga</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body x-data="data()" class="text-base tracking-tight antialiased" @keydown.escape="showReceiveDonation = false">
+    <!-- Receive Donation Modal -->
+    <div :class="{'opacity-100 visible': showReceiveDonation, 'opacity-0 invisible': !showReceiveDonation }" class="ease relative z-50 opacity-0 duration-300" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Background Backdrop -->
+        <div class="fixed inset-0 bg-black/80 transition-opacity duration-300 ease-out"></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center">
+                <div @click.away="showReceiveDonation = false" x-show="showReceiveDonation" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 scale-95" x-transition:enter-end="opacity-100 translate-y-0 scale-100" x-transition:leave="ease-in duration-300"
+                    x-transition:leave-start="opacity-100 translate-y-0 scale-100" x-transition:leave-end="opacity-0 translate-y-4 scale-95" class="relative m-3 transform overflow-hidden transition-all sm:m-4 sm:w-full sm:max-w-3xl sm:px-8">
+                    <!-- Modal Content -->
+                    <div class="relative grid items-center bg-white md:grid-cols-10">
+                        <button @click="showReceiveDonation = false" type="button" class="absolute top-2 right-2 inline-flex items-center hover:text-gray-900 active:scale-95">
+                            <img src="assets/images/svg/close.svg" alt="close" />
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                        <div class="col-span-4 hidden md:block">
+                            <img src="assets/images/recieve-donation/recieve.png" alt="recieve" />
+                        </div>
+                        <div class="flex flex-col items-center px-3 py-12 text-center md:col-span-6 md:p-12">
+                            <h2 class="mb-4 text-xl font-medium leading-10 text-primary-1100 md:text-2xl md:leading-10">
+                                Receive Donation in kenya
+                            </h2>
+                            <p class="mb-6 text-base leading-7 text-dark-700 md:text-lg">
+                                To Receive Donations: In Kenya Dial
+                                <span class="text-primary-600">*789*UNGA#</span> Or
+                                <span class="text-primary-600">*789*8642#</span> To Register
+                            </p>
+                            <div class="w-full px-10">
+                                <button class="btn btn-sm btn-primary w-full">
+                                    Tap to copy code
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="relative flex md:items-center md:flex-col py-1.5 md:py-4 md:gap-y-2">
+                <div class="flex">
+                    <a href="index.html"><img class="h-14 md:h-auto" src="assets/images/svg/logo.svg" alt="logo" /></a>
+                </div>
+                <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute top-full -left-4 -right-4 z-40 flex max-h-0 flex-col overflow-hidden bg-dark-800 transition-all duration-300 md:static md:max-h-full md:items-center md:justify-center md:overflow-visible md:bg-white md:ml-0">
+                    <ul class="flex flex-col gap-4 p-4 text-base leading-5 tracking-normal text-white md:flex-row md:items-center md:gap-8 md:p-0 md:text-center md:text-dark-700">
+                        <li>
+                            <a class="block p-2.5 font-medium text-white md:text-secondary-600" href="home.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="contact.html">Contact</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="#faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="block p-2.5" href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
+                    <img
+                    x-show="!isMenuOpen"
+                    src="assets/images/svg/menu.svg"
+                    alt="icon"
+                    />
+                    <img
+                    x-show="isMenuOpen"
+                    src="assets/images/svg/close.svg"
+                    alt="icon"
+                    />
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <section class="pt-10 pb-16 lg:pb-24">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex flex-col items-center text-center mb-12">
+                    <h1 class="text-2xl font-medium capitalize leading-snug md:text-4xl lg:leading-snug mb-4">
+                        Bitcoin donations to buy maize meal A.K.A Unga for Kenyans suffering due to drought.
+                    </h1>
+                    <p class="text-base lg:text-lg">
+                        To Receive Donations: In Kenya Dial *789*UNGA# or *789*8642# to register
+                    </p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h6 class="text-lg leading-7 lg:text-xl lg:leading-8 text-center mb-7">
+                        Waiting for Donations ...
+                    </h6>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-y-16 md:gap-x-32 justify-center md:justify-between w-full mb-14">
+                        <template x-for="i in 6">
+                            <div class="flex flex-col items-center">
+                                <img class="aspect-square object-cover rounded-full w-44 mb-5" src="assets/images/homepage/avatar.jpg" alt="avatar">
+                                <div class="flex items-center gap-3 mb-5">
+                                    <input class="border border-dark-300 rounded focus:outline-none w-10 text-center px-1" type="text" />
+                                    <span>Bags</span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-xs">Donate</button>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="button" class="btn btn-dark !px-10">Donate to General Pool</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-dark-100 pt-14 pb-14 lg:pt-24 lg:pb-32">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="mx-auto max-w-3xl">
+                <div class="mb-7 flex flex-col gap-5 text-center md:mb-16">
+                    <h2 class="text-3xl font-medium leading-tight lg:text-4xl">
+                        Frequently asked questions
+                    </h2>
+                    <p class="text-lg text-dark-500 lg:text-xl">
+                        Everything you need to know about the donation
+                    </p>
+                </div>
+
+                <div class="-mx-4 flex flex-col gap-4 tracking-normal md:mx-0">
+                    <template x-for="item in faq" :key="item.id">
+                        <div
+                            @click="selectedFaq !== item.id ? selectedFaq = item.id : selectedFaq = null"
+                            class="relative flex cursor-pointer flex-col rounded-none bg-white py-5 pr-5 pl-14 md:rounded-2xl md:py-8 md:pr-8 md:pl-20">
+                            <div class="relative">
+                            <h4
+                                x-text="item.question"
+                                class="text-lg font-medium text-primary-1100"></h4>
+                            <div class="absolute -left-9 top-0 md:-left-12">
+                                <img
+                                x-show="selectedFaq !== item.id"
+                                src="assets/images/svg/minus.svg"
+                                alt="minus"/>
+                                <img
+                                x-show="selectedFaq == item.id"
+                                src="assets/images/svg/plus.svg"
+                                alt="minus"/>
+                            </div>
+                            </div>
+                            <div
+                            :style="selectedFaq == item.id ? 'max-height: ' + $refs.accordion.scrollHeight + 'px' : ''"
+                            x-ref="accordion"
+                            class="relative max-h-0 overflow-hidden transition-all duration-300">
+                            <p x-text="item.answer" class="pt-2 text-base text-dark-500">
+                                Lorem ipsum dolor sit amet consectetur. Risus curabitur enim
+                                consectetur adipiscing varius quis. Tellus hac ipsum
+                                accumsan ut faucibus facilisi nulla. Elementum est tortor.
+                            </p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark-1000 py-12">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
+            <div class="xl:px-8">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col justify-between md:items-center lg:flex-row">
+                        <div class="mb-8 flex lg:mb-0 2xl:w-40">
+                            <a href="index.html"><img src="assets/images/svg/logo-light.svg" alt="logo" /></a>
+                        </div>
+                        <ul class="mb-9 flex flex-col gap-2.5 text-base leading-5 text-dark-200 md:flex-row md:items-center lg:mb-0">
+                            <li>
+                                <a class="block p-2.5" href="home.html">Home</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="contact.html">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="gallery.html">Gallery</a>
+                            </li>
+                            <li>
+                                <a class="block p-2.5" href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                        </ul>
+                        <ul class="flex items-center gap-6 pl-3 md:pl-0">
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/linkedin.svg" alt="linkedin" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/twitter.svg" alt="twitter" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/instagram.svg" alt="instagram" />
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">
+                                    <img src="assets/images/svg/social/facebook.svg" alt="facebook" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-center text-dark-400">
+                        © 2023 Sats4unga, All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Alipine JS -->
+<script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</html>

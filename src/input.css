@@ -164,6 +164,10 @@
   @apply text-sm leading-none
 }
 
+.btn-xs {
+  @apply text-sm leading-none px-10 py-3.5 h-auto
+}
+
 .btn-primary {
   @apply bg-primary-600 hover:bg-dark-800
 }
