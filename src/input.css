@@ -150,6 +150,10 @@
   font-weight: 900;
   font-style: italic;
 }
+:root {
+  --swiper-navigation-color: #080808;
+  --swiper-navigation-size: 30px
+}
 
 
 @tailwind base;
