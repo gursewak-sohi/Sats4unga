@@ -2,6 +2,7 @@ document.addEventListener("alpine:init", () => {
     Alpine.data("data", () => ({
         isMenuOpen: false,
         showReceiveDonation: false,
+        isDonateModal: false,
         donateForm: {
             email: "",
             bags: "",
