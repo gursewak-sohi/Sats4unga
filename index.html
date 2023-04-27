@@ -4,298 +4,328 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sats4unga</title>
+    <title>Surrey Steels</title>
     <link rel="shortcut icon" href="./favicon.svg" />
     <link href="./assets/css/style.css" rel="stylesheet" />
 </head>
 
-<body x-data="data()" class="text-base tracking-tight antialiased" @keydown.escape="showReceiveDonation = false">
-    <!-- Receive Donation Modal -->
-    <div :class="{'opacity-100 visible': showReceiveDonation, 'opacity-0 invisible': !showReceiveDonation }" class="ease relative z-50 opacity-0 duration-300" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <!-- Background Backdrop -->
-        <div class="fixed inset-0 bg-black/80 transition-opacity duration-300 ease-out"></div>
-        <div class="fixed inset-0 z-10 overflow-y-auto">
-            <div class="flex min-h-full items-center justify-center">
-                <div @click.away="showReceiveDonation = false" x-show="showReceiveDonation" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 scale-95" x-transition:enter-end="opacity-100 translate-y-0 scale-100" x-transition:leave="ease-in duration-300"
-                    x-transition:leave-start="opacity-100 translate-y-0 scale-100" x-transition:leave-end="opacity-0 translate-y-4 scale-95" class="relative m-3 transform overflow-hidden transition-all sm:m-4 sm:w-full sm:max-w-3xl sm:px-8">
-                    <!-- Modal Content -->
-                    <div class="relative grid items-center bg-white md:grid-cols-10">
-                        <button @click="showReceiveDonation = false" type="button" class="absolute top-2 right-2 inline-flex items-center hover:text-gray-900 active:scale-95">
-                            <img src="assets/images/svg/close.svg" alt="close" />
-                            <span class="sr-only">Close modal</span>
-                        </button>
-                        <div class="col-span-4 hidden md:block">
-                            <img src="assets/images/recieve-donation/recieve.png" alt="recieve" />
-                        </div>
-                        <div class="flex flex-col items-center px-3 py-12 text-center md:col-span-6 md:p-12">
-                            <h2 class="mb-4 text-xl font-medium leading-10 text-primary-1100 md:text-2xl md:leading-10">
-                                Receive Donation in kenya
-                            </h2>
-                            <p class="mb-6 text-base leading-7 text-dark-700 md:text-lg">
-                                To Receive Donations: In Kenya Dial
-                                <span class="text-primary-600">*789*UNGA#</span> Or
-                                <span class="text-primary-600">*789*8642#</span> To Register
-                            </p>
-                            <div class="w-full px-10">
-                                <button class="btn btn-sm btn-primary w-full">
-                                    Tap to copy code
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<body x-data="data()" class="text-base tracking-tight antialiased">
     <!-- Header Section -->
-    <header>
-        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
-            <div class="relative flex py-1.5 xl:grid xl:grid-cols-3">
-                <div class="flex">
-                    <a href="index.html"><img class="h-14 md:h-auto" src="assets/images/svg/logo.svg" alt="logo" /></a>
+    <header class="bg-black py-4 md:pt-5 md:pb-1 lg:py-3">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+            <div class="relative flex py-1.5 justify-between items-center">
+                <div class="flex md:absolute lg:static top-0">
+                    <a href="index.html"><img class="w-48 lg:w-80" src="assets/images/svg/logo.svg" alt="logo" /></a>
                 </div>
-                <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute top-full -left-4 -right-4 z-40 flex max-h-0 flex-col overflow-hidden bg-dark-800 transition-all duration-300 md:static md:ml-auto md:max-h-full md:items-center md:justify-center md:overflow-visible md:bg-white xl:ml-0">
-                    <ul class="flex flex-col gap-4 p-4 text-base leading-5 tracking-normal text-white md:flex-row md:items-center md:gap-8 md:p-0 md:text-center md:text-dark-700">
-                        <li>
-                            <a class="block p-2.5 font-medium text-white md:text-secondary-600" href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a class="block p-2.5" href="about.html">About</a>
-                        </li>
-                        <li>
-                            <a class="block p-2.5" href="contact.html">Contact</a>
-                        </li>
-                        <li>
-                            <a class="block p-2.5" href="#faq">FAQ</a>
-                        </li>
-                        <li>
-                            <a class="block p-2.5" href="gallery.html">Gallery</a>
-                        </li>
-                    </ul>
+                <div class="flex flex-col items-end gap-y-3 md:w-full">
+                    <a class="text-3xl font-bold text-white duration-200 hover:text-primary-500 hidden md:block" href="tel:02089474722">02089474722</a>
+                    <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute bg-black md:bg-transparent md:w-full lg:w-auto top-full -left-4 -right-4 z-40 flex max-h-0 flex-col overflow-hidden transition-all duration-300 md:static lg:ml-auto md:max-h-full md:items-center md:justify-center md:overflow-visible">
+                        <ul class="flex flex-col gap-2 md:gap-4 p-4 text-lg leading-6 tracking-normal font-semibold text-white md:flex-row lg:gap-8 md:p-0 w-full justify-between">
+                            <li>
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">About us</a>
+                            </li>
+                            <li class="relative group">
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">Surrey Steel <br class="hidden md:inline">Trading</a>
+                                <div class="invisible opacity-0 duration-200 group-hover:visible group-hover:opacity-100 w-60 left-1/2 -translate-x-1/2 absolute pt-3.5">
+                                    <ul class="bg-dark-500  top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Site Survey</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">3D/CAD</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Fabrication</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Delivery/Crane Lift</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Products</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group">
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">Surry Steel <br class="hidden md:inline">Installation</a>
+                                <div class="invisible opacity-0 duration-200 group-hover:visible group-hover:opacity-100 w-60 left-1/2 -translate-x-1/2 absolute pt-3.5">
+                                    <ul class="bg-dark-500  top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">What we do</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group">
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">Surrey Steel <br class="hidden md:inline">Architectural</a>
+                                <div class="invisible opacity-0 duration-200 group-hover:visible group-hover:opacity-100 w-60 left-1/2 -translate-x-1/2 absolute pt-3.5">
+                                    <ul class="bg-dark-500 top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Staircases</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Balustrades</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gates/Railings</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Juliet Balconies</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Garden Pergolas</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">Contact Us</a>
+                            </li>
+                            <li class="block md:hidden">
+                                <a class="text-2xl p-2.5 font-bold block text-white duration-200 hover:text-primary-500" href="tel:02089474722">02089474722</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
+                        <img
+                        class="w-10"
+                        src="assets/images/svg/icon-menu.svg"
+                        alt="icon"
+                        />
+                    </button>
                 </div>
-                <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
-                    <img
-                    x-show="!isMenuOpen"
-                    src="assets/images/svg/menu.svg"
-                    alt="icon"
-                    />
-                    <img
-                    x-show="isMenuOpen"
-                    src="assets/images/svg/close.svg"
-                    alt="icon"
-                    />
-                </button>
             </div>
         </div>
     </header>
-    <!-- Banner Section -->
-    <section class="relative z-0 bg-cover bg-center" style="background-image: url(assets/images/homepage/banner@2x.webp)">
-        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
-            <div class="flex h-[652px] flex-col items-center justify-between md:flex-row lg:h-[720px]">
-                <div class="flex w-full flex-col gap-y-6 pt-16 text-white md:pt-0">
-                    <h1 class="text-4xl font-medium capitalize leading-tight lg:text-h1">
-                        Unga for Kenyans <br /> suffering due to drought.
-                    </h1>
-                    <p class="text-lg leading-7 lg:text-xl lg:leading-8">
-                        Donate sats(bitcoin) to buy unga (maize flour) to people in Kenya
-                    </p>
-                    <div class="mt-2 flex flex-col gap-4 md:mt-0 md:flex-row md:items-center">
-                        <a href="donate-sats.html" class="btn btn-primary">Donate now</a>
-                        <button type="button" @click="showReceiveDonation = true" href="javascript:;" class="btn btn-dark">Receive donation</button>
-                    </div>
-                </div>
-                <div class="mb-16 flex-shrink-0 self-end md:mb-9 md:mr-3">
-                    <img src="assets/images/homepage/badge.svg" alt="badge" />
-                </div>
-            </div>
-        </div>
-        <div class="absolute inset-y-0 left-0 -z-10 w-2/3 bg-gradient-to-r from-dark-800/80"></div>
-    </section>
 
-    <!-- Stats Section -->
-    <section class="py-16 lg:py-24">
-        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
-            <div class="xl:px-8">
-                <div class="grid grid-cols-1 gap-8 rounded-2xl bg-secondary-50 px-4 py-10 md:grid-cols-3 md:gap-4 lg:py-16 xl:gap-8 xl:p-16">
-                    <div class="flex flex-col items-center gap-2 text-center">
-                        <h3 class="text-5xl font-medium leading-tight text-primary-600 lg:text-6xl">
-                            +$10K
-                        </h3>
-                        <p class="text-lg text-primary-800">Worth of BTC distributed</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-2 text-center">
-                        <h3 class="text-5xl font-medium leading-tight text-primary-600 lg:text-6xl">
-                            +20K
-                        </h3>
-                        <p class="text-lg text-primary-800">Bags of maize meal donated</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-2 text-center">
-                        <h3 class="text-5xl font-medium leading-tight text-primary-600 lg:text-6xl">
-                            14,859
-                        </h3>
-                        <p class="text-lg text-primary-800">People have a better life</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Content Section -->
-    <section class="pt-14 pb-14 lg:pt-28 lg:pb-11 xl:pt-40">
-        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
-            <div class="flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-9">
-                <div class="flex flex-col items-start">
-                    <h2 class="text-3xl font-medium capitalize leading-tight text-primary-1100 lg:text-5xl lg:leading-tight">
-                        There’s no big impact without Action
-                    </h2>
-                    <p class="mt-4 text-base text-dark-700 md:text-lg">
-                        Lorem ipsum dolor sit amet consectetur. Volutpat dolor quis volutpat volutpat amet sollicitudin. Vitae porttitor vel ut id auctor pellentesque tellus dui malesuada. Ullamcorper fringilla semper non rhoncus. Enim facilisis lorem proin est rutrum nisl.
-                        In tortor at <br />
-                        <br /> consectetur lectus adipiscing ullamcorper turpis augue. Nunc sed enim tortor pellentesque. Consectetur ut lacus neque sagittis vitae eget viverra enim hendrerit. Magna facilisis egestas malesuada sagittis justo elementum
-                        leo ullamcorper neque. Mauris risus augue ante nisl auctor lorem egestas. Justo accumsan tincidunt mauris urna faucibus fusce tincidunt aliquam ut. Suspendisse dui diam diam malesuada nunc.
-                    </p>
-                    <a href="donate-sats.html" class="btn btn-primary mt-8 w-full md:w-auto">Donate now</a>
-                </div>
-                <div class="flex-shrink-0">
-                    <img class="max-w-full md:max-w-lg xl:max-w-none" src="assets/images/homepage/frames@2x.webp" width="647" height="550" alt="frames" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client Section -->
-    <section class="py-14 lg:py-24">
-        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
-            <div class="xl:px-8">
-                <ul class="grid grid-cols-2 items-center justify-between gap-8 px-0 py-0 md:grid-cols-3 lg:flex lg:py-16 xl:p-16">
-                    <li>
-                        <img src="assets/images/homepage/clients/layers.svg" alt="layers" />
-                    </li>
-                    <li>
-                        <img src="assets/images/homepage/clients/sisyphus.svg" alt="sisyphus" />
-                    </li>
-                    <li>
-                        <img src="assets/images/homepage/clients/circooles.svg" alt="circooles" />
-                    </li>
-                    <li>
-                        <img src="assets/images/homepage/clients/catalog.svg" alt="catalog" />
-                    </li>
-                    <li>
-                        <img src="assets/images/homepage/clients/quotient.svg" alt="quotient" />
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="bg-dark-100 pt-14 pb-14 lg:pt-24 lg:pb-32">
-        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
-            <div class="mx-auto max-w-3xl">
-                <div class="mb-7 flex flex-col gap-5 text-center md:mb-16">
-                    <h2 class="text-3xl font-medium leading-tight lg:text-4xl">
-                        Frequently asked questions
-                    </h2>
-                    <p class="text-lg text-dark-500 lg:text-xl">
-                        Everything you need to know about the donation
-                    </p>
-                </div>
-
-                <div class="-mx-4 flex flex-col gap-4 tracking-normal md:mx-0">
-                    <template x-for="item in faq" :key="item.id">
-                        <div
-                            @click="selectedFaq !== item.id ? selectedFaq = item.id : selectedFaq = null"
-                            class="relative flex cursor-pointer flex-col rounded-none bg-white py-5 pr-5 pl-14 md:rounded-2xl md:py-8 md:pr-8 md:pl-20">
-                            <div class="relative">
-                            <h4
-                                x-text="item.question"
-                                class="text-lg font-medium text-primary-1100"></h4>
-                            <div class="absolute -left-9 top-0 md:-left-12">
-                                <img
-                                x-show="selectedFaq !== item.id"
-                                src="assets/images/svg/minus.svg"
-                                alt="minus"/>
-                                <img
-                                x-show="selectedFaq == item.id"
-                                src="assets/images/svg/plus.svg"
-                                alt="minus"/>
-                            </div>
-                            </div>
-                            <div
-                            :style="selectedFaq == item.id ? 'max-height: ' + $refs.accordion.scrollHeight + 'px' : ''"
-                            x-ref="accordion"
-                            class="relative max-h-0 overflow-hidden transition-all duration-300">
-                            <p x-text="item.answer" class="pt-2 text-base text-dark-500">
-                                Lorem ipsum dolor sit amet consectetur. Risus curabitur enim
-                                consectetur adipiscing varius quis. Tellus hac ipsum
-                                accumsan ut faucibus facilisi nulla. Elementum est tortor.
-                            </p>
-                            </div>
+    <main class="pb-10 md:pb-20">
+         <!-- Banner Section -->
+        <section class="bg-primary-500 overflow-hidden">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative">
+                    <div class="flex flex-col pt-10 md:pt-14 pb-10 md:pb-16 lg:pb-20 relative z-10">
+                        <div class="relative flex flex-col justify-between px-8 md:px-10 py-10 h-[400px] md:h-[625px] after:border-[8px] md:after:border-[10px] after:absolute after:border-white after:inset-0 after:w-full lg:after:w-[120%]">
+                            <h1 class="font-oswald text-white text-6xl md:text-8xl lg:text-large leading-none mt-auto">Steel <br>Fabrication <br>Specialists</h1>
                         </div>
-                    </template>
+                        <h2 class="font-oswald text-white text-3xl md:text-4xl lg:text-5xl leading-tight md:px-12 mt-6 md:mt-10">Leaders in steel fabrication in London and the South East.</h2>
+                        <div class="flex justify-start md:px-12 mt-6 md:mt-10 lg:hidden">
+                            <a class="text-2xl md:text-3xl text-white font-semibold block bg-primary-500 px-8 md:px-10 lg:px-16 py-4 md:py-6 lg:py-8 rounded-xl duration-200 hover:bg-primary-600" href="javascript:;">Request Qoute</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-[50vw] h-full lg:h-[1000px] absolute lg:relative -mx-8 lg:mx-0">
+                        <div class="bg-gradient-to-t from-black absolute inset-0 lg:hidden"></div>
+                        <img class="w-full h-full object-cover" src="assets/images/header/3.jpg" alt="poster"/>
+                        <div class="absolute bottom-20 left-20 hidden lg:block">
+                            <a class="text-2xl md:text-3xl text-white font-semibold block bg-primary-500 px-8 md:px-10 lg:px-16 py-4 md:py-6 lg:py-8 rounded-xl duration-200 hover:bg-primary-600" href="javascript:;">Request Qoute</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Surrey Steel Trading Section -->
+        <section class="bg-danger-500 overflow-hidden py-10 md:pt-12 md:pb-16">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="grid gap-5 md:gap-0 grid-cols-1 md:grid-cols-2">
+                    <div>
+                        <h2 class="text-6xl md:text-8xl lg:text-large leading-none font-oswald text-white">Surrey Steel <br><span class="text-primary-500">Trading</span></h2>
+                    </div>
+                    <div class="flex md:pl-16 lg:pl-48">
+                        <ul class="text-xl md:text-2xl lg:text-3xl leading-tight text-white font-semibold">
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Site Survey</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">3D/CAD</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Fabrication</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Delivery/Crane Lift</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Products</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Surrey Steel Installation Section -->
+        <section class="bg-black overflow-hidden py-10 md:pt-12 md:pb-16">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="grid gap-5 md:gap-0 grid-cols-1 md:grid-cols-2">
+                    <div>
+                        <h2 class="text-6xl md:text-8xl lg:text-large leading-none font-oswald text-white">Surrey Steel <br><span class="text-primary-500">Installation</span></h2>
+                    </div>
+                    <div class="flex md:pl-16 lg:pl-48">
+                        <ul class="text-xl md:text-2xl lg:text-3xl leading-tight text-white font-semibold">
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">What we do</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Surrey Steel Architectural Section -->
+        <section class="bg-dark-400 overflow-hidden py-10 md:pt-12 md:pb-16">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="grid gap-5 md:gap-0 grid-cols-1 md:grid-cols-2">
+                    <div>
+                        <h2 class="text-6xl md:text-8xl lg:text-large leading-none font-oswald text-white">Surrey Steel <br><span class="text-primary-500">Architectural</span></h2>
+                    </div>
+                    <div class="flex md:pl-16 lg:pl-48">
+                        <ul class="text-xl md:text-2xl lg:text-3xl leading-tight text-white font-semibold">
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Staircases</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Balustrades</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gates/Railings</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Juliet Balconies</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Garden Pergolas</a>
+                            </li>
+                            <li>
+                                <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-10 md:pt-14 md:pb-16">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <p class="text-lg md:text-2xl lg:text-3xl leading-8 md:leading-9 lg:leading-10 text-neutral-700 mb-6">At Surrey Steels, we offer a wide range of services, from design and fabrication to
+                    delivery and installation. From simple beams to complex structures – we provide
+                    the complete one-stop shop.</p>
+                <p class="text-lg md:text-2xl lg:text-3xl leading-8 md:leading-9 lg:leading-10 text-neutral-700 mb-10 md:mb-14">With our reputation as experts and over 10 years in the industry, we are
+                    completely committed to delivering you the best experience when it comes to
+                    your steel projects – no matter how large or small. We guarantee to quote you
+                    within 24 hours and to support you all the way with competitive prices, guidance
+                    and second-to-none service for all your steel needs.</p>   
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="p-8 md:p-12 bg-primary-500">
+                        <h3 class="text-white font-oswald text-5xl md:text-6xl lg:text-[85px] leading-none font-light">Why <br> choose <br> us?</h3>
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center items-center gap-4 bg-dark-100">
+                        <img class="h-20 md:h-auto" src="assets/images/svg/icon-cart.svg" alt="cart"/>
+                        <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">We are your one-stop shop. We design, fabricate, deliver and install.</h4>
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center items-center gap-4 bg-dark-200">
+                        <img class="h-20 md:h-auto" src="assets/images/svg/icon-time.svg" alt="time"/>
+                        <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">We deliver on time
+                            directly to where you
+                            need your steel.</h4>
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center items-center gap-4 bg-dark-100">
+                        <img class="h-20 md:h-auto" src="assets/images/svg/icon-building.svg" alt="building"/>
+                        <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">We provide a range of
+                            options from simple beams
+                            to complex structures.</h4>
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center items-center gap-4 bg-dark-200">
+                        <img class="h-24 md:h-auto" src="assets/images/svg/icon-lift.svg" alt="lift"/>
+                        <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">Our cranes can lift steels
+                            direct to scaffold or
+                            roofline.</h4>
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center items-center gap-4 bg-dark-100">
+                        <img class="h-20 md:h-auto" src="assets/images/svg/icon-wallet.svg" alt="wallet"/>
+                        <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">We will save you money
+                            with our competitive
+                            prices.</h4>
+                    </div>
+                </div>  
+                <div class="flex justify-end mt-10">
+                    <a class="text-2xl md:text-3xl text-white font-semibold block bg-primary-500 px-8 md:px-10 lg:px-16 py-4 md:py-6 lg:py-8 rounded-xl duration-200 hover:bg-primary-600" href="javascript:;">Request Qoute</a>
+                </div>               
+            </div>
+        </section>
+    </main>
 
     <!-- Footer Section -->
-    <footer class="bg-dark-1000 py-12">
-        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-20 2xl:px-32">
-            <div class="xl:px-8">
-                <div class="flex flex-col gap-8">
-                    <div class="flex flex-col justify-between md:items-center lg:flex-row">
-                        <div class="mb-8 flex lg:mb-0 2xl:w-40">
-                            <a href="index.html"><img src="assets/images/svg/logo-light.svg" alt="logo" /></a>
+    <footer>
+        <div class="bg-black py-10">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-0 justify-between">
+                    <a href="javascript:;">
+                        <img class="w-44 md:w-48" src="assets/images/svg/logo.svg" alt="logo"/>
+                    </a>
+                    <div class="flex items-center gap-3">
+                        <img class="w-8" src="assets/images/svg/icon-clock.svg" alt="clock"/>
+                        <div class="flex flex-col items-start text-white font-semibold text-lg">
+                            <p>Mon-Fri: 07.30-17.0</p>
+                            <p>Sat: 07.00-13.00</p>
                         </div>
-                        <ul class="mb-9 flex flex-col gap-2.5 text-base leading-5 text-dark-200 md:flex-row md:items-center lg:mb-0">
-                            <li>
-                                <a class="block p-2.5" href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a class="block p-2.5" href="about.html">About Us</a>
-                            </li>
-                            <li>
-                                <a class="block p-2.5" href="contact.html">Contact Us</a>
-                            </li>
-                            <li>
-                                <a class="block p-2.5" href="gallery.html">Gallery</a>
-                            </li>
-                            <li>
-                                <a class="block p-2.5" href="privacy-policy.html">Privacy Policy</a>
-                            </li>
-                        </ul>
-                        <ul class="flex items-center gap-6 pl-3 md:pl-0">
-                            <li>
-                                <a target="_blank" href="javascript:;">
-                                    <img src="assets/images/svg/social/linkedin.svg" alt="linkedin" />
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="javascript:;">
-                                    <img src="assets/images/svg/social/twitter.svg" alt="twitter" />
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="javascript:;">
-                                    <img src="assets/images/svg/social/instagram.svg" alt="instagram" />
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="javascript:;">
-                                    <img src="assets/images/svg/social/facebook.svg" alt="facebook" />
-                                </a>
-                            </li>
-                        </ul>
                     </div>
-                    <p class="text-center text-dark-400">
-                        © 2023 Sats4unga, All rights reserved
-                    </p>
+                    <ul class="flex items-center gap-4">
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-facebook.svg" alt="facebook"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-twitter.svg" alt="twitter"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-linkedin.svg" alt="linkedin"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-instagram.svg" alt="instagram"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white pt-5 pb-8">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="flex flex-col items-center md:items-start">
+                    <img class="w-96" src="assets/images/footer/logos.png" alt="logos"/>
+                    <div class="text-sm flex flex-col md:flex-row text-center md:text-left items-center gap-4 md:gap-8 mt-3">
+                        <p>© 2023 Surrey Steel Trading - All rights reserved</p>
+                        <p>Rainbow Industrial Estate, Station Approach, Grand Drive Raynes Park SW20 0JY</p>
+                        <a href="javascript:;">Terms & Conditions</a>
+                        <a href="javascript:;">Privacy Policy</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 </body>
+
 <!-- Alipine JS -->
 <script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
 <script src="assets/js/main.js"></script>

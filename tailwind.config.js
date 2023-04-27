@@ -4,36 +4,25 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Azo Sans', 'sans-serif'],
+                sans: ['Poppins', 'sans-serif'],
+                oswald: ['Oswald', 'sans-serif'],
             },
-            fontSize: {
-                h1: '64px',
+            fontSize : {
+                'large' : '115px'
             },
             colors: {
                 'primary': {
-                    100: '#F8EDD8',
-                    600: '#DCA33C', //brand
-                    800: '#936D28',
-                    1100: '#2C210C',
-                },
-                'secondary': {
-                    50: '#F9F5FF',
-                    600: '#593C8A',
-                },
-                'danger': {
-                    600: '#EA0000',
+                    500: '#FF8300', //brand
+                    600: '#E87700',
                 },
                 'dark': {
-                    100: '#FBFBFB',
-                    200: '#FAFAFA',
-                    300: '#D0D0D0',
-                    400: '#A7A7A7',
-                    500: '#7D7D7D',
-                    600: '#535353',
-                    700: '#323232',
-                    800: '#101010', //brand
-                    900: '#080808',
-                    1000: '#050505'
+                    100: '#f5f6f6',
+                    200: '#ececed',
+                    400: '#4f4f4f',
+                    500: '#323232',
+                },
+                'danger': {
+                    500: '#810000',
                 },
             },
         },

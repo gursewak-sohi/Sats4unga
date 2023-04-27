@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surrey Steels</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body x-data="data()" class="text-base tracking-tight antialiased">
+    <!-- Header Section -->
+    <header class="bg-black py-4 md:pt-5 md:pb-1 lg:py-3">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+            <div class="relative flex py-1.5 justify-between items-center">
+                <div class="flex md:absolute lg:static top-0">
+                    <a href="index.html"><img class="w-48 lg:w-80" src="assets/images/svg/logo.svg" alt="logo" /></a>
+                </div>
+                <div class="flex flex-col items-end gap-y-3 md:w-full">
+                    <a class="text-3xl font-bold text-white duration-200 hover:text-primary-500 hidden md:block" href="tel:02089474722">02089474722</a>
+                    <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute bg-black md:bg-transparent md:w-full lg:w-auto top-full -left-4 -right-4 z-40 flex max-h-0 flex-col overflow-hidden transition-all duration-300 md:static lg:ml-auto md:max-h-full md:items-center md:justify-center md:overflow-visible">
+                        <ul class="flex flex-col gap-2 md:gap-4 p-4 text-lg leading-6 tracking-normal font-semibold text-white md:flex-row lg:gap-8 md:p-0 w-full justify-between">
+                            <li>
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">About us</a>
+                            </li>
+                            <li class="relative group">
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">Surrey Steel <br class="hidden md:inline">Trading</a>
+                                <div class="invisible opacity-0 duration-200 group-hover:visible group-hover:opacity-100 w-60 left-1/2 -translate-x-1/2 absolute pt-3.5">
+                                    <ul class="bg-dark-500  top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Site Survey</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">3D/CAD</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Fabrication</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Delivery/Crane Lift</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Products</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group">
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">Surry Steel <br class="hidden md:inline">Installation</a>
+                                <div class="invisible opacity-0 duration-200 group-hover:visible group-hover:opacity-100 w-60 left-1/2 -translate-x-1/2 absolute pt-3.5">
+                                    <ul class="bg-dark-500  top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">What we do</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group">
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">Surrey Steel <br class="hidden md:inline">Architectural</a>
+                                <div class="invisible opacity-0 duration-200 group-hover:visible group-hover:opacity-100 w-60 left-1/2 -translate-x-1/2 absolute pt-3.5">
+                                    <ul class="bg-dark-500 top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Staircases</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Balustrades</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gates/Railings</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Juliet Balconies</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Garden Pergolas</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="block p-2.5 duration-200 hover:text-primary-500" href="javascript:;">Contact Us</a>
+                            </li>
+                            <li class="block md:hidden">
+                                <a class="text-2xl p-2.5 font-bold block text-white duration-200 hover:text-primary-500" href="tel:02089474722">02089474722</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
+                        <img
+                        class="w-10"
+                        src="assets/images/svg/icon-menu.svg"
+                        alt="icon"
+                        />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pb-10 md:pb-20">
+         <!-- Banner Section -->
+        <section class="bg-danger-500 overflow-hidden">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative">
+                    <div class="flex flex-col pt-10 md:pt-14 pb-10 md:pb-16 lg:pb-20 relative z-10">
+                        <div class="relative flex flex-col justify-between px-8 md:px-10 py-10 h-[400px] md:h-[625px] after:border-[8px] md:after:border-[10px] after:absolute after:border-white after:inset-0 after:w-full lg:after:w-[120%]">
+                          <h2 class="font-oswald text-white text-2xl md:text-4xl lg:text-5xl font-semibold leading-snug">Surrey Steels <br><span class="text-primary-500">Trading</span></h2>  
+                          <h1 class="font-oswald text-white text-6xl md:text-8xl lg:text-large leading-none mt-auto">Site <br>Survey</h1>
+                        </div>
+                        <h2 class="font-oswald text-white text-3xl md:text-4xl lg:text-5xl leading-tight md:px-12 mt-6 md:mt-10">We provide a full onsite
+                          survey and measuring
+                          service to deliver the very
+                          best solution for our clients.</h2>
+                        <div class="flex justify-start md:px-12 mt-6 md:mt-10 lg:hidden">
+                            <a class="text-2xl md:text-3xl text-white font-semibold block bg-primary-500 px-8 md:px-10 lg:px-16 py-4 md:py-6 lg:py-8 rounded-xl duration-200 hover:bg-primary-600" href="javascript:;">Request Qoute</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-[50vw] h-full lg:h-[1000px] absolute lg:relative -mx-8 lg:mx-0">
+                        <div class="bg-gradient-to-t from-black absolute inset-0 lg:hidden"></div>
+                        <img class="w-full h-full object-cover" src="assets/images/header/4.png" alt="poster"/>
+                        <div class="absolute bottom-20 left-20 hidden lg:block">
+                            <a class="text-2xl md:text-3xl text-white font-semibold block bg-primary-500 px-8 md:px-10 lg:px-16 py-4 md:py-6 lg:py-8 rounded-xl duration-200 hover:bg-primary-600" href="javascript:;">Request Qoute</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+        <!-- Text Section -->
+        <section class="py-10 md:pt-14 md:pb-16">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <p class="text-lg md:text-2xl lg:text-3xl leading-8 md:leading-9 lg:leading-10 text-neutral-700 mb-6">Reprehendi, non quia crasse compositum illepedeve putetur, sed quia nuper,
+                  nec veniam antiquis, sed honorem et praemia posci. Recte necne crocum
+                  floresque perambulet Attae fabula si dubitem.</p>
+                <p class="text-lg md:text-2xl lg:text-3xl leading-8 md:leading-9 lg:leading-10 text-neutral-700 mb-6">Orbilium dictare; sed emendata videri pulchraque et exactis minimum
+                  distantia miror. Inter quae verbum emicuit si forte decorum, et si versus paulo
+                  concinnior unus et alter, iniuste totum ducit venditque poema.</p>
+                <p class="text-lg md:text-2xl lg:text-3xl leading-8 md:leading-9 lg:leading-10 text-neutral-700 mb-6">Reprehendi, non quia crasse compositum illepedeve putetur, sed quia nuper,
+                  nec veniam antiquis, sed honorem et praemia posci. Recte necne crocum
+                  floresque perambulet Attae fabula si dubitem.</p>
+                <p class="text-lg md:text-2xl lg:text-3xl leading-8 md:leading-9 lg:leading-10 text-neutral-700 mb-6">Orbilium dictare; sed emendata videri pulchraque et exactis minimum
+                        distantia miror. Inter quae verbum emicuit si forte decorum, et si versus paulo
+                        concinnior unus et alter, iniuste totum ducit venditque poema.</p>              
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="bg-black py-10">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-0 justify-between">
+                    <a href="javascript:;">
+                        <img class="w-44 md:w-48" src="assets/images/svg/logo.svg" alt="logo"/>
+                    </a>
+                    <div class="flex items-center gap-3">
+                        <img class="w-8" src="assets/images/svg/icon-clock.svg" alt="clock"/>
+                        <div class="flex flex-col items-start text-white font-semibold text-lg">
+                            <p>Mon-Fri: 07.30-17.0</p>
+                            <p>Sat: 07.00-13.00</p>
+                        </div>
+                    </div>
+                    <ul class="flex items-center gap-4">
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-facebook.svg" alt="facebook"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-twitter.svg" alt="twitter"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-linkedin.svg" alt="linkedin"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-instagram.svg" alt="instagram"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white pt-5 pb-8">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="flex flex-col items-center md:items-start">
+                    <img class="w-96" src="assets/images/footer/logos.png" alt="logos"/>
+                    <div class="text-sm flex flex-col md:flex-row text-center md:text-left items-center gap-4 md:gap-8 mt-3">
+                        <p>© 2023 Surrey Steel Trading - All rights reserved</p>
+                        <p>Rainbow Industrial Estate, Station Approach, Grand Drive Raynes Park SW20 0JY</p>
+                        <a href="javascript:;">Terms & Conditions</a>
+                        <a href="javascript:;">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<!-- Alipine JS -->
+<script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</html>
